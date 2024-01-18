@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- terminal mode
-vim.keymap.set("t", "<leader>e", "<C-\\><C-N>")
+vim.keymap.set("t", "<ESC>", "<C-\\><C-N>")
 
 -- for moving around windows
 vim.keymap.set("n", "<leader>h", "<C-W><C-H>")
