@@ -27,6 +27,7 @@ lspconfig.lua_ls.setup {
 			},
 		},
 	},
+	disable = { "missing-fields", "incomplete-signature-doc" }
 }
 
 lsp.preset('recommended')
