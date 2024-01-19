@@ -41,5 +41,7 @@ return require('packer').startup(function(use)
 		require("toggleterm").setup()
 	end}
 
+	use "sindrets/diffview.nvim"
+
 end)
 
