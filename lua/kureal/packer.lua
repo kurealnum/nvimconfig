@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use 'yashguptaz/calvera-dark.nvim'
 
 	use('nvim-treesitter/nvim-treesitter')
 	use('theprimeagen/harpoon')
@@ -66,6 +66,13 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
+
+	use({
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup()
+		end,
+	})
 
 	use 'lewis6991/gitsigns.nvim'
 
