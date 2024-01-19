@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
 
 	use 'yashguptaz/calvera-dark.nvim'
 
-	use('nvim-treesitter/nvim-treesitter')
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
