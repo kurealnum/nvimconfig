@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
 	use 'yashguptaz/calvera-dark.nvim'
@@ -24,21 +24,21 @@ return require('packer').startup(function(use)
 		requires = {
 			--- Uncomment the two plugins below if you want to manage the language servers from neovim
 			--- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},
+			{ 'neovim/nvim-lspconfig' },
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'L3MON4D3/LuaSnip'},
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'L3MON4D3/LuaSnip' },
 		}
 	}
 
-	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+	use { "akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
-	end}
+	end }
 
 	use "sindrets/diffview.nvim"
 
@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
 		config = function()
 			require("auto-session").setup {
 				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "/Code", "~/Downloads", "/"},
+				auto_session_suppress_dirs = { "~/", "/Code", "~/Downloads", "/" },
 			}
 		end
 	}
@@ -66,14 +66,7 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use({
-		"stevearc/conform.nvim",
-		config = function()
-			require("conform").setup()
-		end,
-	})
+	use 'mhartington/formatter.nvim'
 
 	use 'lewis6991/gitsigns.nvim'
-
 end)
-
