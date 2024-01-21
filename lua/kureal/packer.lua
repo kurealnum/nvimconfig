@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use 'mhartington/formatter.nvim'
+	use 'stevearc/conform.nvim'
 
 	use 'lewis6991/gitsigns.nvim'
 end)
