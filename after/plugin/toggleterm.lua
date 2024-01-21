@@ -5,6 +5,6 @@ vim.cmd '1ToggleTerm name=termproject'
 vim.cmd '2ToggleTerm name=termgit'
 
 tt.setup{
-	shade_terminals = false
+	shade_terminals = true
 }
 

@@ -1,3 +1,14 @@
--- for transparent background
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- colorscheme set-up
+require("catppuccin").setup({
+	transparent_background = true,
+	term_colors = true,
+	color_overrides = {
+				mocha = {
+					base = "#000000",
+					mantle = "#000000",
+					crust = "#000000",
+				},
+			},
+})
+
+vim.cmd 'colorscheme catppuccin-mocha'

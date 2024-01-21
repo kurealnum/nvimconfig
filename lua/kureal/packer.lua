@@ -13,7 +13,8 @@ return require('packer').startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	use 'yashguptaz/calvera-dark.nvim'
+	use { 'catppuccin/nvim', as = 'catppuccin' }
+	use 'iagorrr/noctis-high-contrast.nvim'
 
 	use 'nvim-treesitter/nvim-treesitter'
 

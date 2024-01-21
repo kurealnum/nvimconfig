@@ -2,6 +2,6 @@ require("kureal.remap")
 require("kureal.set")
 
 vim.wo.relativenumber = true
-require('calvera').set()
+vim.cmd 'colorscheme catppuccin-mocha'
 
 vim.g.python3_host_prog = "/usr/bin/python3"
