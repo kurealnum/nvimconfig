@@ -1,37 +1,32 @@
-return { "stevearc/conform.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local conform = require("conform")
+require("formatter").setup({
+  logging = true,
+  filetype = {
+    css = {
+      require("formatter.filetypes.css").prettier,
+    },
+	python = {
+		require("formatter.filetypes.python").black,
+	},
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
+    json = {
+      require("formatter.filetypes.json").prettier,
+    },
+    markdown = {
+      require("formatter.filetypes.markdown").prettier,
+    },
+    vue = {
+      require("formatter.filetypes.vue").prettier,
+    },
+  },
+})
 
-    conform.setup({
-      formatters_by_ft = {
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
-        svelte = { "prettier" },
-        css = { "prettier" },
-        html = { "prettier" },
-        json = { "prettier" },
-        yaml = { "prettier" },
-        markdown = { "prettier" },
-        graphql = { "prettier" },
-        lua = { "prettier" },
-        python = { "prettier" },
-      },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 500,
-      },
-    })
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+	group = "__formatter__",
+	command = ":FormatWrite",
+})
 
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      conform.format({
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 500,
-      })
-    end, { desc = "Format file or range (in visual mode)" })
-  end,
-}
