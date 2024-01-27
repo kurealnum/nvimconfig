@@ -2,6 +2,9 @@
 require("catppuccin").setup({
 	transparent_background = true,
 	term_colors = true,
+	integrations = {
+		gitsigns = true,
+	},
 	color_overrides = {
 				mocha = {
 					base = "#000000",
