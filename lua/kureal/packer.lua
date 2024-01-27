@@ -94,8 +94,11 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-		'windwp/nvim-ts-autotag',
+		'matthewmazzanti/nvim-ts-autotag',
+		config = function ()
+			require('nvim-ts-autotag').setup({
+				filetypes = {"html", "xml", "htmldjango"}
+			})
+		end
 	}
-
-
 end)

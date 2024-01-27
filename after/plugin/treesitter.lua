@@ -1,10 +1,10 @@
 require'nvim-treesitter.configs'.setup {
-  modules = {},
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "python", "javascript", "html"},
+	modules = {},
+	-- A list of parser names, or "all" (the five listed parsers should always be installed)
+	ensure_installed = { "c", "lua", "python", "javascript", "html"},
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+	-- Install parsers synchronously (only applied to `ensure_installed`)
+	sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -25,4 +25,12 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  autotag = {
+	  enable = true,
+  },
 }
+
+require('nvim-ts-autotag').setup({
+	enable = true,
+  filetypes = { "htmldjango" , "html", "xml" },
+})
