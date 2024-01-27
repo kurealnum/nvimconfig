@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>tt", "o<Esc>o<Esc>o<Esc>k")
 
 -- sets window size = ideal size for 2 buffers and 2 terms
-vim.keymap.set("n", "<C-w>.", "<C-w>=12<C-w>+")
+vim.keymap.set("n", "<C-w>.", "<C-w>=z12<CR>")
 
 -- open netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
