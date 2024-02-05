@@ -32,6 +32,8 @@ lspconfig.lua_ls.setup {
 
 lsp.preset('recommended')
 
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
