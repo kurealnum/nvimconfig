@@ -19,8 +19,11 @@ require("formatter").setup({
 		markdown = {
 			require("formatter.filetypes.markdown").prettier,
 		},
-		vue = {
-			require("formatter.filetypes.vue").prettier,
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+		},
+		typescriptreact = {
+			require("formatter.filetypes.typescriptreact").prettier,
 		},
 		html = {
 			require("formatter.filetypes.html").prettier,
@@ -33,6 +36,7 @@ require("formatter").setup({
 						"--reformat",
 						"--format-css",
 						"--format-js",
+						"--ignore=T002",
 						"-",
 					},
 					stdin = true,

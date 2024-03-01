@@ -104,12 +104,18 @@ return require("packer").startup(function(use)
 		"matthewmazzanti/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup({
-				filetypes = { "html", "xml", "htmldjango" },
+				filetypes = { "html", "xml", "htmldjango", "typescriptreact" },
 			})
 		end,
 	})
 
 	use({
 		"lukas-reineke/indent-blankline.nvim",
+	})
+	use({
+		"FotiadisM/tabset.nvim",
+		config = function()
+			require("tabset").setup()
+		end,
 	})
 end)
