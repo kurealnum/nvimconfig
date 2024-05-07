@@ -5,7 +5,7 @@ require("tabset").setup({
 	},
 	languages = {
 		{
-			filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "c" },
 			config = {
 				tabwidth = 2,
 			},

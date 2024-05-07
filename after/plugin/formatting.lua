@@ -28,6 +28,9 @@ require("formatter").setup({
 		html = {
 			require("formatter.filetypes.html").prettier,
 		},
+		c = {
+			require("formatter.filetypes.c").clangformat,
+		},
 		htmldjango = {
 			function()
 				return {
