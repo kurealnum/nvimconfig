@@ -19,7 +19,6 @@ return require("packer").startup(function(use)
 
 	use("nvim-treesitter/nvim-treesitter")
 
-	use("theprimeagen/harpoon")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use({
@@ -55,7 +54,7 @@ return require("packer").startup(function(use)
 		config = function()
 			require("auto-session").setup({
 				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "/Code", "~/Downloads", "/" },
+				auto_session_allowed_dirs = { "~/", "/home/oscar/1TB/Code/" },
 			})
 		end,
 	})
@@ -104,7 +103,7 @@ return require("packer").startup(function(use)
 		"matthewmazzanti/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup({
-				filetypes = { "html", "xml", "htmldjango", "typescriptreact" },
+				filetypes = { "html", "xml", "htmldjango", "typescriptreact", "javascriptreact" },
 			})
 		end,
 	})

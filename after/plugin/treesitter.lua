@@ -32,5 +32,5 @@ require("nvim-treesitter.configs").setup({
 
 require("nvim-ts-autotag").setup({
 	enable = true,
-	filetypes = { "htmldjango", "html", "xml", "typescriptreact" },
+	filetypes = { "htmldjango", "html", "xml", "typescriptreact", "javascriptreact" },
 })
