@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 	})
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("iagorrr/noctis-high-contrast.nvim")
+	use("EdenEast/nightfox.nvim")
 
 	use("nvim-treesitter/nvim-treesitter")
 
