@@ -1,3 +1,4 @@
+-- test comment
 -- colorscheme set-up
 -- require("catppuccin").setup({
 -- 	transparent_background = true,
