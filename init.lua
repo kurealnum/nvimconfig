@@ -1,2 +1,2 @@
 require("kureal")
-require("kureal.packer")
+require("kureal.lazy")
