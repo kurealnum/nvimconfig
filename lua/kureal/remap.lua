@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
--- create a new line with 2 spaces around it 
+-- create a new line with 2 spaces around it
 vim.keymap.set("n", "<leader>tt", "o<Esc>o<Esc>o<Esc>k")
 
 -- sets window size = ideal size for 2 buffers and 2 terms
@@ -26,4 +26,5 @@ vim.keymap.set("n", "<leader>oc", "<cmd>DiffviewClose<cr>")
 vim.keymap.set("n", "<leader>to", "<cmd>tabe<cr>")
 vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>")
 
-
+-- open diagnostics
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
