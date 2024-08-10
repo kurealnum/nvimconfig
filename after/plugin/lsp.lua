@@ -66,7 +66,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	sources = cmp.config.sources({
-		{ name = "nvimlsp", keyword_length = 1 },
+		{ name = "nvim_lsp", keyword_length = 1 },
 		{ name = "buffer", keyword_length = 1 },
 	}),
 })

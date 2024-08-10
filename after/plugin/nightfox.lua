@@ -15,10 +15,16 @@ require("nightfox").setup({
 			variables = "NONE",
 		},
 	},
+	modules = {
+		diagnostic = {
+			enable = true,
+			background = false,
+		},
+	},
 	palettes = {
 		all = {
-			sel0 = "#000821",
-			sel1 = "#110f11",
+			sel0 = "#2b3b51",
+			sel1 = "#3c5372",
 		},
 	},
 	groups = {
@@ -46,5 +52,3 @@ require("nightfox").setup({
 		},
 	},
 })
-
-vim.cmd("colorscheme carbonfox")

@@ -1,4 +1,3 @@
-vim.cmd("colorscheme carbonfox")
 require("lualine").setup({
 	options = {
 		icons_enabled = true,

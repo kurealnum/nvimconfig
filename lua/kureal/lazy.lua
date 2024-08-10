@@ -33,14 +33,30 @@ require("lazy").setup({
 			"nvim-telescope/telescope-file-browser.nvim",
 			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		},
-		{
-			"catppuccin/nvim",
-			name = "catppuccin",
-			priority = 1000,
-		},
+		-- color schemes
 		{
 			"EdenEast/nightfox.nvim",
 		},
+		{
+			"daschw/leaf.nvim",
+		},
+		{
+			"kartikp10/noctis.nvim",
+			dependencies = {
+				"rktjmp/lush.nvim",
+			},
+		},
+		{
+			{ "rose-pine/neovim", name = "rose-pine" },
+		},
+		{
+			"ray-x/starry.nvim",
+		},
+		-- transparency (kinda counts as a color scheme)
+		{
+			"xiyaowong/transparent.nvim",
+		},
+		-- end color schemes
 		{
 			"nvim-treesitter/nvim-treesitter",
 		},
