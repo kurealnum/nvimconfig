@@ -14,3 +14,11 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.diagnostic.config({
 	float = { border = "rounded" },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "txt", "env" },
+	callback = function(opts)
+		local cmp = require("cmp")
+		cmp.setup.buffer({ enabled = false })
+	end,
+})

@@ -38,6 +38,9 @@ require("lazy").setup({
 			"EdenEast/nightfox.nvim",
 		},
 		{
+			"scottmckendry/cyberdream.nvim",
+		},
+		{
 			"daschw/leaf.nvim",
 		},
 		{
@@ -65,14 +68,21 @@ require("lazy").setup({
 			branch = "v4.x",
 			dependencies = {
 				{ "neovim/nvim-lspconfig" },
+
+				-- Sources
 				{ "hrsh7th/cmp-buffer" },
 				{ "hrsh7th/cmp-nvim-lsp" },
 				{ "hrsh7th/nvim-cmp" },
-				{ "L3MON4D3/LuaSnip" },
+				{ "hrsh7th/cmp-nvim-lua" },
+				{ "hrsh7th/cmp-path" },
+				{ "saadparwaiz1/cmp_luasnip" },
+
+				-- Mason
 				{ "williamboman/mason.nvim" },
 				{ "williamboman/mason-lspconfig.nvim" },
 			},
 		},
+		{ "L3MON4D3/LuaSnip" },
 		{ "akinsho/toggleterm.nvim", version = "*", config = true },
 		{ "sindrets/diffview.nvim" },
 		{

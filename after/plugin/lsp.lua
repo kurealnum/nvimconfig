@@ -48,14 +48,6 @@ local types = require("cmp.types")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
 	preselect = "item",
-	completion = {
-		autocomplete = {
-			types.cmp.TriggerEvent.TextChanged,
-		},
-		completeopt = "menu,menuone,noinsert",
-		keyword_length = 1,
-		keyword_pattern = ".*",
-	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 		["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
@@ -66,8 +58,11 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp", keyword_length = 1 },
-		{ name = "buffer", keyword_length = 1 },
+		{ name = "luasnip" },
+		{ name = "nvim_lua" },
+		{ name = "nvim_lsp" },
+		{ name = "buffer", keyword_length = 4 },
+		{ name = "path" },
 	}),
 })
 
