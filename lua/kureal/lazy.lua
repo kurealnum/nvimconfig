@@ -82,6 +82,11 @@ require("lazy").setup({
 				{ "williamboman/mason-lspconfig.nvim" },
 			},
 		},
+		{
+			"ray-x/lsp_signature.nvim",
+			event = "VeryLazy",
+			opts = {},
+		},
 		{ "L3MON4D3/LuaSnip" },
 		{ "akinsho/toggleterm.nvim", version = "*", config = true },
 		{ "sindrets/diffview.nvim" },
