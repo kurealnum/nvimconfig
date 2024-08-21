@@ -11,7 +11,7 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 
 	-- List of parsers to ignore installing (or "all")
-	ignore_install = { "javascript" },
+	ignore_install = {},
 
 	---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
 	-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -31,6 +31,13 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("nvim-ts-autotag").setup({
-	enable = true,
-	filetypes = { "htmldjango", "html", "xml", "typescriptreact", "javascriptreact" },
+	opts = {
+		-- Defaults
+		enable_close = true, -- Auto close tags
+		enable_rename = true, -- Auto rename pairs of tags
+		enable_close_on_slash = true, -- Auto close on trailing </
+	},
+	-- Also override individual filetype configs, these take priority.
+	-- Empty by default, useful if one of the "opts" global settings
+	-- doesn't work well in a specific filetype
 })

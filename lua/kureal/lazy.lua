@@ -124,12 +124,7 @@ require("lazy").setup({
 			dependencies = { "nvim-tree/nvim-web-devicons" },
 		},
 		{
-			"matthewmazzanti/nvim-ts-autotag",
-			config = function()
-				require("nvim-ts-autotag").setup({
-					filetypes = { "html", "xml", "htmldjango", "typescriptreact", "javascriptreact" },
-				})
-			end,
+			"windwp/nvim-ts-autotag",
 		},
 		{
 			"lukas-reineke/indent-blankline.nvim",
