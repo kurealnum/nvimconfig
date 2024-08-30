@@ -4,6 +4,9 @@ require("formatter").setup({
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},
+		java = {
+			require("formatter.filetypes.java").google_java_format,
+		},
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},

@@ -132,6 +132,9 @@ require("lazy").setup({
 		{
 			"FotiadisM/tabset.nvim",
 		},
+		{
+			"mfussenegger/nvim-jdtls",
+		},
 	},
 	ui = {
 		border = "single",
