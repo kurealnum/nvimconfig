@@ -40,7 +40,7 @@ lspconfig.lua_ls.setup({
 	disable = { "missing-fields", "incomplete-signature-doc" },
 })
 
-lsp.setup_servers({ "tsserver", "pyright", "eslint" })
+lsp.setup_servers({ "ts_ls", "pyright", "eslint" })
 
 -- cmp config
 local cmp = require("cmp")
@@ -69,7 +69,7 @@ cmp.setup({
 -- mason config
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "tsserver", "pyright", "eslint", "lua_ls" },
+	ensure_installed = { "ts_ls", "pyright", "eslint", "lua_ls" },
 	handlers = {
 		lsp.default_setup,
 	},
