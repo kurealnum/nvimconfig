@@ -2,5 +2,6 @@ local tt = require("toggleterm")
 
 tt.setup({
 	shade_terminals = true,
-	open_mapping = [[<leader>te]],
 })
+
+vim.keymap.set("n", "<leader>te", "<cmd>ToggleTerm<cr>")
