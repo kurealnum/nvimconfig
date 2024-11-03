@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "Pmenu", { bg = "none", fg = "none" })
 	end,
 })
 -- colorscheme
