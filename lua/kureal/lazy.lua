@@ -135,6 +135,23 @@ require("lazy").setup({
 		{
 			"mfussenegger/nvim-jdtls",
 		},
+		{
+			"romgrk/barbar.nvim",
+			dependencies = {
+				"lewis6991/gitsigns.nvim",
+				"nvim-tree/nvim-web-devicons",
+			},
+			init = function()
+				vim.g.barbar_auto_setup = false
+			end,
+			opts = {
+				animation = true,
+			},
+		},
+		{
+			"nvim-pack/nvim-spectre",
+			dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
+		},
 	},
 	ui = {
 		border = "single",

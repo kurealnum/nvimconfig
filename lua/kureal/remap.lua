@@ -1,5 +1,3 @@
-local toggle_term = require("toggleterm")
-
 vim.g.mapleader = " "
 
 -- create a new line with 2 spaces around it
