@@ -1,3 +1,5 @@
+local toggle_term = require("toggleterm")
+
 vim.g.mapleader = " "
 
 -- create a new line with 2 spaces around it
@@ -27,4 +29,7 @@ vim.keymap.set("n", "<leader>to", "<cmd>tabe<cr>")
 vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>")
 
 -- open diagnostics
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
+-- quit all
+vim.cmd("command Q qa!")

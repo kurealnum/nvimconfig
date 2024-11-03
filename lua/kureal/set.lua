@@ -13,3 +13,5 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
+vim.g.python3_host_prog = "/usr/bin/python3"
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
