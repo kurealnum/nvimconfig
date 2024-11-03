@@ -31,3 +31,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 -- quit all
 vim.cmd("command Q qa!")
+
+-- yank to global clipboard
+vim.keymap.set("v", "<leader>yg", '"+y')
