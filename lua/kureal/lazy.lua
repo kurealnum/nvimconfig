@@ -145,12 +145,21 @@ require("lazy").setup({
 				vim.g.barbar_auto_setup = false
 			end,
 			opts = {
-				animation = true,
+				animation = false,
 			},
 		},
 		{
 			"nvim-pack/nvim-spectre",
 			dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
+		},
+		{
+			"MeanderingProgrammer/render-markdown.nvim",
+			dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+			-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+			-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+			---@module 'render-markdown'
+			---@type render.md.UserConfig
+			opts = {},
 		},
 	},
 	ui = {
@@ -160,5 +169,5 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "nightfox" } },
 	-- automatically check for plugin updates
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 })
