@@ -37,6 +37,9 @@ require("formatter").setup({
 		c = {
 			require("formatter.filetypes.c").clangformat,
 		},
+		tex = {
+			require("formatter.filetypes.latex").latexindent,
+		},
 		htmldjango = {
 			function()
 				return {
