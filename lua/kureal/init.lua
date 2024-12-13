@@ -13,5 +13,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function(opts)
 		local cmp = require("cmp")
 		cmp.setup.buffer({ enabled = false })
+		-- have to "re-enable" spellchecking for these files
+		vim.opt.spelllang = "en_us"
+		vim.opt.spell = true
 	end,
 })
+
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
