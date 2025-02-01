@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>tt", "o<Esc>o<Esc>o<Esc>k")
 vim.keymap.set("n", "<C-w>.", "<C-w>=z12<CR>")
 
 -- open netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<cmd>NnnPicker<cr>")
 
 -- terminal mode
 vim.keymap.set("t", "<ESC>", "<C-\\><C-N>")

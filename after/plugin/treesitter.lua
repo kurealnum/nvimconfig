@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"markdown_inline",
 		"markdown_inline",
 		"latex",
+		"java",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

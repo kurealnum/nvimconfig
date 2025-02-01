@@ -133,7 +133,7 @@ require("lazy").setup({
 			"FotiadisM/tabset.nvim",
 		},
 		{
-			"mfussenegger/nvim-jdtls",
+			"luukvbaal/nnn.nvim",
 		},
 		{
 			"romgrk/barbar.nvim",
