@@ -1,3 +1,5 @@
+local util = require("formatter.util")
+
 require("formatter").setup({
 	logging = true,
 	filetype = {
@@ -29,7 +31,17 @@ require("formatter").setup({
 			require("formatter.filetypes.typescript").prettier,
 		},
 		typescriptreact = {
-			require("formatter.filetypes.typescriptreact").prettier,
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--plugin=prettier-plugin-tailwindcss",
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+					},
+					stdin = true,
+				}
+			end,
 		},
 		html = {
 			require("formatter.filetypes.html").prettier,
@@ -39,6 +51,9 @@ require("formatter").setup({
 		},
 		tex = {
 			require("formatter.filetypes.latex").latexindent,
+		},
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
 		},
 		htmldjango = {
 			function()
