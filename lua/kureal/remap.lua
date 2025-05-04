@@ -22,10 +22,6 @@ vim.keymap.set("n", "<leader>l", "<C-W><C-L>")
 vim.keymap.set("n", "<leader>oo", "<cmd>DiffviewOpen<cr>")
 vim.keymap.set("n", "<leader>oc", "<cmd>DiffviewClose<cr>")
 
--- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabe<cr>")
-vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>")
-
 -- open diagnostics
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
@@ -34,3 +30,12 @@ vim.cmd("command Q qa!")
 
 -- yank to global clipboard
 vim.keymap.set("v", "<leader>yg", '"+y')
+
+-- go to definition/declaration
+vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+
+-- delete string -> "string" (from outside the quote)
+vim.api.nvim_set_keymap("n", "ds", 'd2f"', { noremap = true, silent = true })
+-- delete string -> "string" (from the quote itself)
+vim.api.nvim_set_keymap("n", "dS", 'd1f"', { noremap = true, silent = true })

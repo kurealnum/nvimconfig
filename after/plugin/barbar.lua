@@ -5,8 +5,8 @@ local opts = { noremap = true, silent = true }
 map("n", "<A-h>", "<Cmd>BufferPrevious<CR>", opts)
 map("n", "<A-l>", "<Cmd>BufferNext<CR>", opts)
 -- Re-order to previous/next
-map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
-map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
+map("n", "<A-[>", "<Cmd>BufferMovePrevious<CR>", opts)
+map("n", "<A-]>", "<Cmd>BufferMoveNext<CR>", opts)
 -- Goto buffer in position...
 map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
 map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
