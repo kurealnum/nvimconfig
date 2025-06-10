@@ -15,6 +15,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "none" })
 
+		-- for telescope
+		vim.api.nvim_set_hl(0, "TelescopePreviewLine", { bg = "#32302f", fg = "none" })
+		vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#32302f", fg = "none" })
+
 		-- stupid barbar
 		vim.api.nvim_set_hl(0, "BufferOffset", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "BufferScrollArrow", { bg = "none", fg = "none" })
