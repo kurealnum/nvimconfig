@@ -34,6 +34,14 @@ require("lazy").setup({
 			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		},
 		-- color schemes
+		{ "DonJulve/NeoCyberVim" },
+		{ "tiesen243/vercel.nvim" },
+		{ "sponkurtus2/angelic.nvim" },
+		{ "Skalyaev/a-nvim-theme" },
+		{ "neko-night/nvim" },
+		{ "wtfox/jellybeans.nvim" },
+		{ "ficcdaf/ashen.nvim" },
+		{ "0xstepit/flow.nvim" },
 		{
 			"EdenEast/nightfox.nvim",
 		},
@@ -233,6 +241,7 @@ require("lazy").setup({
 				})
 			end,
 		},
+		{ "wakatime/vim-wakatime", lazy = false },
 	},
 	{
 		rocks = {
