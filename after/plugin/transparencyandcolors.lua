@@ -1,3 +1,5 @@
+-- colorscheme
+vim.cmd("colorscheme gruvbox")
 -- enable mason and popup transparency (not sure why I have to do this)
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
@@ -10,9 +12,25 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "none", fg = "none" })
 		vim.api.nvim_set_hl(0, "Pmenu", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "none" })
+
+		-- stupid barbar
+		vim.api.nvim_set_hl(0, "BufferOffset", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferScrollArrow", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferTabpages", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferTabpagesSep", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultTabpages", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultTabpageFill", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultTabpagesSep", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultInactive", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferInactive", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultCurrent", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "BufferDefaultVisible", { bg = "none", fg = "none" })
+		vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#777777" })
 	end,
 })
--- colorscheme
-vim.cmd("colorscheme rose-pine-moon")
+
 -- enable global transparency
 vim.cmd("TransparentEnable")

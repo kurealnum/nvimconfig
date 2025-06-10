@@ -34,6 +34,8 @@ require("lazy").setup({
 			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		},
 		-- color schemes
+		{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+		{ "romgrk/doom-one.vim" },
 		{ "DonJulve/NeoCyberVim" },
 		{ "tiesen243/vercel.nvim" },
 		{ "sponkurtus2/angelic.nvim" },

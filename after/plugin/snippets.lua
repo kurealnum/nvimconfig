@@ -27,6 +27,7 @@ ls.add_snippets("tex", {
 			[[ 
         \documentclass{{article}}
         \usepackage{{graphicx}}
+        \usepackage{{parskip}}
 
         \begin{{document}}
 
