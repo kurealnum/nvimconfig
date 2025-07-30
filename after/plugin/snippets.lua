@@ -28,6 +28,7 @@ ls.add_snippets("tex", {
         \documentclass{{article}}
         \usepackage{{graphicx}}
         \usepackage{{parskip}}
+        \usepackage{{amsmath}}
 
         \begin{{document}}
 

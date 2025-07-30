@@ -1,16 +1,9 @@
-local lsp = require("lsp-zero")
 local lspconfig = require("lspconfig")
 
 -- lsp config
 local lsp_attach = function(client, bufnr)
 	local opts = { buffer = bufnr }
 end
-
-lsp.extend_lspconfig({
-	sign_text = true,
-	lsp_attach = lsp_attach,
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
-})
 
 lspconfig.lua_ls.setup({
 	settings = {
@@ -40,7 +33,12 @@ lspconfig.lua_ls.setup({
 	disable = { "missing-fields", "incomplete-signature-doc" },
 })
 
-lsp.setup_servers({ "ts_ls", "pyright", "eslint" })
+local servers = {
+	"ts_ls",
+	"pyright",
+	"eslint",
+	"lua_ls",
+}
 
 -- cmp config
 local cmp = require("cmp")
@@ -68,11 +66,9 @@ cmp.setup({
 
 -- mason config
 require("mason").setup({})
-require("mason-lspconfig").setup({
-	ensure_installed = { "ts_ls", "pyright", "eslint", "lua_ls" },
-	handlers = {
-		lsp.default_setup,
-	},
-})
+local mason_lspconfig = require("mason-lspconfig")
 
-lsp.setup()
+mason_lspconfig.setup({
+	ensure_installed = servers,
+	automatic_enable = true,
+})

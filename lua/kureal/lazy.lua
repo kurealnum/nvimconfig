@@ -72,25 +72,8 @@ require("lazy").setup({
 		-- end color schemes
 		{
 			"nvim-treesitter/nvim-treesitter",
-		},
-		{
-			"VonHeikemen/lsp-zero.nvim",
-			branch = "v4.x",
-			dependencies = {
-				{ "neovim/nvim-lspconfig" },
-
-				-- Sources
-				{ "hrsh7th/cmp-buffer" },
-				{ "hrsh7th/cmp-nvim-lsp" },
-				{ "hrsh7th/nvim-cmp" },
-				{ "hrsh7th/cmp-nvim-lua" },
-				{ "hrsh7th/cmp-path" },
-				{ "saadparwaiz1/cmp_luasnip" },
-
-				-- Mason
-				{ "williamboman/mason.nvim" },
-				{ "williamboman/mason-lspconfig.nvim" },
-			},
+			dependencies = { "OXY2DEV/markview.nvim" },
+			lazy = false,
 		},
 		{
 			"ray-x/lsp_signature.nvim",
@@ -164,13 +147,9 @@ require("lazy").setup({
 		},
 		{
 			"OXY2DEV/markview.nvim",
-			lazy = false, -- Recommended
-			-- ft = "markdown" -- If you decide to lazy-load anyway
 
-			dependencies = {
-				"nvim-treesitter/nvim-treesitter",
-				"nvim-tree/nvim-web-devicons",
-			},
+			-- Need this to avoid this error: https://github.com/OXY2DEV/markview.nvim/issues/365
+			event = "VeryLazy",
 		},
 		{
 			"lervag/vimtex",
@@ -205,45 +184,42 @@ require("lazy").setup({
 				})
 			end,
 		},
+		{ "wakatime/vim-wakatime", lazy = false },
+		{
+			"NStefan002/screenkey.nvim",
+			lazy = false,
+			version = "*", -- or branch = "main", to use the latest commit
+		},
 		{
 			"mrcjkb/rustaceanvim",
-			version = "^5", -- Recommended
-			lazy = false, -- This plugin is already lazy
-			ft = "rust",
-			config = function()
-				local mason_registry = require("mason-registry")
-				local codelldb = mason_registry.get_package("codelldb")
-				local extension_path = codelldb:get_install_path() .. "/extension/"
-				local codelldb_path = extension_path .. "adapter/codelldb"
-				-- local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-				-- If you are on Linux, replace the line above with the line below:
-				local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-				local cfg = require("rustaceanvim.config")
-
-				vim.g.rustaceanvim = {
-					dap = {
-						adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-					},
-				}
-			end,
+			version = "^6",
+			lazy = false,
+			["rust-analyzer"] = {
+				cargo = {
+					allFeatures = true,
+				},
+				check = {
+					command = "clippy",
+					extraArgs = { "--no-deps" },
+				},
+				checkOnSave = true,
+			},
 		},
 		{
-			"azratul/live-share.nvim",
-			event = "VeryLazy",
+			"neovim/nvim-lspconfig",
 			dependencies = {
-				"jbyuki/instant.nvim",
+				{ "hrsh7th/cmp-buffer" },
+				{ "hrsh7th/cmp-nvim-lsp" },
+				{ "hrsh7th/nvim-cmp" },
+				{ "hrsh7th/cmp-nvim-lua" },
+				{ "hrsh7th/cmp-path" },
+				{ "saadparwaiz1/cmp_luasnip" },
+
+				-- Mason
+				{ "williamboman/mason.nvim" },
+				{ "williamboman/mason-lspconfig.nvim" },
 			},
-			config = function()
-				vim.g.instant_username = "kureal"
-				require("live-share").setup({
-					port_internal = 9876,
-					max_attempts = 20,
-					service_url = "/tmp/service.url",
-					service = "serveo.net",
-				})
-			end,
 		},
-		{ "wakatime/vim-wakatime", lazy = false },
 	},
 	{
 		rocks = {

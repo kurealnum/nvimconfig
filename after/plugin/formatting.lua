@@ -53,7 +53,12 @@ require("formatter").setup({
 			require("formatter.filetypes.latex").latexindent,
 		},
 		rust = {
-			require("formatter.filetypes.rust").rustfmt,
+			function()
+				return {
+					exe = "rustfmt",
+					cwd = ".",
+				}
+			end,
 		},
 		htmldjango = {
 			function()
