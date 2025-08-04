@@ -44,3 +44,9 @@ map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 -- custom stuff
 map("n", "<A-k>", "<Cmd>tabnew<CR>", opts)
+
+local barbar = require("barbar")
+
+barbar.setup({
+	animation = false,
+})

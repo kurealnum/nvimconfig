@@ -24,16 +24,7 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		{
-			"nvim-telescope/telescope.nvim",
-			tag = "0.1.8",
-			dependencies = { { "nvim-lua/plenary.nvim" } },
-		},
-		{
-			"nvim-telescope/telescope-file-browser.nvim",
-			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		},
-		-- color schemes
+		-- Color Schemes
 		{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
 		{ "romgrk/doom-one.vim" },
 		{ "DonJulve/NeoCyberVim" },
@@ -65,11 +56,22 @@ require("lazy").setup({
 		{
 			"ray-x/starry.nvim",
 		},
-		-- transparency (kinda counts as a color scheme)
+		-- Transparency (somewhat counts as a color scheme)
 		{
 			"xiyaowong/transparent.nvim",
 		},
-		-- end color schemes
+		-- End color schemes
+
+		{
+			"nvim-telescope/telescope.nvim",
+			tag = "0.1.8",
+			dependencies = { { "nvim-lua/plenary.nvim" } },
+		},
+		{
+			"nvim-telescope/telescope-file-browser.nvim",
+			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		},
+
 		{
 			"nvim-treesitter/nvim-treesitter",
 			dependencies = { "OXY2DEV/markview.nvim" },
@@ -87,13 +89,8 @@ require("lazy").setup({
 			"rmagatti/auto-session",
 			lazy = false,
 			dependencies = {
-				"nvim-telescope/telescope.nvim", -- Only needed if you want to use sesssion lens
+				"nvim-telescope/telescope.nvim",
 			},
-			config = function()
-				require("auto-session").setup({
-					auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-				})
-			end,
 		},
 		{ "nvim-tree/nvim-web-devicons" },
 		{
@@ -137,9 +134,6 @@ require("lazy").setup({
 			init = function()
 				vim.g.barbar_auto_setup = false
 			end,
-			opts = {
-				animation = false,
-			},
 		},
 		{
 			"nvim-pack/nvim-spectre",
@@ -151,10 +145,11 @@ require("lazy").setup({
 			-- Need this to avoid this error: https://github.com/OXY2DEV/markview.nvim/issues/365
 			event = "VeryLazy",
 		},
+
+		-- I don't normally include a config in lazy.lua, but this seems like the easiest (or only) way to configure vimtex
 		{
 			"lervag/vimtex",
-			lazy = false, -- we don't want to lazy load VimTeX
-			-- tag = "v2.15", -- uncomment to pin to a specific release
+			lazy = false,
 			init = function()
 				-- VimTeX configuration goes here, e.g.
 				vim.g.vimtex_view_method = "zathura"
@@ -171,39 +166,17 @@ require("lazy").setup({
 		{
 			"saecki/crates.nvim",
 			ft = { "toml" },
-			config = function()
-				require("crates").setup({
-					completion = {
-						cmp = {
-							enabled = true,
-						},
-					},
-				})
-				require("cmp").setup.buffer({
-					sources = { { name = "crates" } },
-				})
-			end,
 		},
 		{ "wakatime/vim-wakatime", lazy = false },
 		{
 			"NStefan002/screenkey.nvim",
 			lazy = false,
-			version = "*", -- or branch = "main", to use the latest commit
+			version = "*",
 		},
 		{
 			"mrcjkb/rustaceanvim",
 			version = "^6",
 			lazy = false,
-			["rust-analyzer"] = {
-				cargo = {
-					allFeatures = true,
-				},
-				check = {
-					command = "clippy",
-					extraArgs = { "--no-deps" },
-				},
-				checkOnSave = true,
-			},
 		},
 		{
 			"neovim/nvim-lspconfig",
@@ -223,15 +196,15 @@ require("lazy").setup({
 	},
 	{
 		rocks = {
-			hererocks = true, -- recommended if you do not have global installation of Lua 5.1.
+
+			-- Recommended if you do not have global installation of Lua 5.1.
+			hererocks = true,
 		},
 	},
 	ui = {
 		border = "single",
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "nightfox" } },
-	-- automatically check for plugin updates
+
+	-- Check for plugin updates
 	checker = { enabled = true, notify = false },
 })
