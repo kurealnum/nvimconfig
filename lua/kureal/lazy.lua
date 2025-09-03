@@ -192,6 +192,7 @@ require("lazy").setup({
 				{ "williamboman/mason.nvim" },
 				{ "williamboman/mason-lspconfig.nvim" },
 			},
+			lazy = false,
 		},
 		{
 			"nvim-java/nvim-java",
