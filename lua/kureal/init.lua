@@ -14,6 +14,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- have to "re-enable" spellchecking for these files
 		vim.opt.spelllang = "en_us"
 		vim.opt.spell = true
+
+		vim.opt.linebreak = true
 	end,
 })
 

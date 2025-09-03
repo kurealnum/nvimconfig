@@ -20,21 +20,35 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
-ls.add_snippets("tex", {
-	s(
-		"basetext",
-		fmt(
-			[[ 
-        \documentclass{{article}}
-        \usepackage{{graphicx}}
-        \usepackage{{parskip}}
-        \usepackage{{amsmath}}
+-- Pretty much only for markdown
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+	return ls.expand_or_jumpable() and "<Plug>luasnip-expand-or-jump" or "<Tab>"
+end, { expr = true })
 
-        \begin{{document}}
+ls.add_snippets(nil, {
+	markdown = {
+		s(
+			"ph",
+			{ t("\\["), i(0), t("\\]") },
+			{ description = "Commonly typed sequence of characters when referring to phonetics" }
+		),
+	},
+	tex = {
+		s(
+			"basetext",
+			fmt(
+				[[ 
+                \documentclass{{article}}
+                \usepackage{{graphicx}}
+                \usepackage{{parskip}}
+                \usepackage{{amsmath}}
 
-        \end{{document}}
-    ]],
-			{}
-		)
-	),
+                \begin{{document}}
+
+                \end{{document}}
+            ]],
+				{}
+			)
+		),
+	},
 })
