@@ -33,6 +33,9 @@ ls.add_snippets(nil, {
 			{ description = "Commonly typed sequence of characters when referring to phonetics" }
 		),
 	},
+	typescriptreact = {
+		s("in", { t("{t('"), i(0), t("')}") }, { description = "Internationalization shortcut" }),
+	},
 	tex = {
 		s(
 			"basetext",
