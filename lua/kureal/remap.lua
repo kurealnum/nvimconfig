@@ -39,3 +39,8 @@ vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { no
 vim.api.nvim_set_keymap("n", "ds", 'd2f"', { noremap = true, silent = true })
 -- delete string -> "string" (from the quote itself)
 vim.api.nvim_set_keymap("n", "dS", 'd1f"', { noremap = true, silent = true })
+
+-- navigate to and fix next mispelled word
+vim.api.nvim_set_keymap("n", "m", "]s", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "M", "[s", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f", "]s 1z=", { noremap = true, silent = true })

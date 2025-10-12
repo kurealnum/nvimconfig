@@ -25,7 +25,7 @@ mason_lspconfig.setup({
 	automatic_enable = true,
 })
 
-require("java").setup({
+vim.lsp.config("java", {
 	jdk = {
 		-- hate this shit. no use jdk. very annoying. email me if you have question
 		auto_install = false,
@@ -34,18 +34,18 @@ require("java").setup({
 		enable = false,
 	},
 })
+vim.lsp.enable({ "java" })
 
-local lspconfig = require("lspconfig")
-
-lspconfig.jdtls.setup({
+vim.lsp.config("jdtls", {
 	settings = {
 		java = {
 			configuration = { runtimes = { name = "JavaJDK-24", path = "/usr/lib/jvm/java-24-jdk/", default = true } },
 		},
 	},
 })
+vim.lsp.enable({ "jdtls" })
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			runtime = {
@@ -72,3 +72,4 @@ lspconfig.lua_ls.setup({
 	},
 	disable = { "missing-fields", "incomplete-signature-doc" },
 })
+vim.lsp.enable({ "lua_ls" })

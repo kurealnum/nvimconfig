@@ -29,9 +29,17 @@ ls.add_snippets(nil, {
 	markdown = {
 		s(
 			"ph",
-			{ t("\\["), i(0), t("\\]") },
+			{ t("\\["), i(1), t("\\]"), i(0) },
 			{ description = "Commonly typed sequence of characters when referring to phonetics" }
 		),
+
+		-- this is so scuffed -- improvement when it isn't 1 am
+		s("h1", { t({ "# " }), i(1), t({ "", "", "" }), i(0) }),
+		s("h2", { t({ "## " }), i(1), t({ "", "", "" }), i(0) }),
+		s("h3", { t({ "### " }), i(1), t({ "", "", "" }), i(0) }),
+		s("h4", { t({ "#### " }), i(1), t({ "", "", "" }), i(0) }),
+		s("h5", { t({ "##### " }), i(1), t({ "", "", "" }), i(0) }),
+		s("h6", { t({ "###### " }), i(1), t({ "", "", "" }), i(0) }),
 	},
 	typescriptreact = {
 		s("in", { t("{t('"), i(0), t("')}") }, { description = "Internationalization shortcut" }),
