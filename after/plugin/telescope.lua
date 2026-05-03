@@ -8,6 +8,7 @@ end)
 -- open symbols
 vim.keymap.set("n", "<leader>pl", builtin.lsp_document_symbols, {})
 
+-- very hacky and shitty fix until telescope gets their nvim v0.12 and treesitter shit figured out
 require("telescope").setup({
 	defaults = {
 		preview = {

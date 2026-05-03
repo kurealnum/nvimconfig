@@ -45,7 +45,7 @@ require("java").setup({
 -- })
 -- vim.lsp.enable({ "jdtls" })
 
-require("lspconfig").jdtls.setup({
+vim.lsp.config("jdtls", {
 	settings = {
 		java = {
 			configuration = { runtimes = { name = "JavaJDK-24", path = "/usr/lib/jvm/java-24-jdk/", default = true } },
