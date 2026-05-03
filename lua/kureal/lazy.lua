@@ -64,8 +64,8 @@ require("lazy").setup({
 
 		{
 			"nvim-telescope/telescope.nvim",
-			tag = "0.1.8",
 			dependencies = { { "nvim-lua/plenary.nvim" } },
+			branch = "master",
 		},
 		{
 			"nvim-telescope/telescope-file-browser.nvim",
@@ -76,6 +76,7 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 			dependencies = { "OXY2DEV/markview.nvim" },
 			lazy = false,
+			branch = "main",
 		},
 		{
 			"ray-x/lsp_signature.nvim",

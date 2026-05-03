@@ -7,3 +7,11 @@ end)
 
 -- open symbols
 vim.keymap.set("n", "<leader>pl", builtin.lsp_document_symbols, {})
+
+require("telescope").setup({
+	defaults = {
+		preview = {
+			treesitter = false,
+		},
+	},
+})

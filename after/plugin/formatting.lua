@@ -35,7 +35,7 @@ require("formatter").setup({
 				return {
 					exe = "prettier",
 					args = {
-						"--plugin=prettier-plugin-tailwindcss",
+						-- "--plugin=prettier-plugin-tailwindcss",
 						"--stdin-filepath",
 						util.escape_path(util.get_current_buffer_file_path()),
 					},
