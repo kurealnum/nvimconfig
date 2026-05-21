@@ -168,7 +168,6 @@ require("lazy").setup({
 			"saecki/crates.nvim",
 			ft = { "toml" },
 		},
-		{ "wakatime/vim-wakatime", lazy = false },
 		{
 			"NStefan002/screenkey.nvim",
 			lazy = false,
